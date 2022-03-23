@@ -51,7 +51,7 @@ conda install -n fastbook -c fastchan fastai
 conda install -n fastbook jupyter
 conda run -n fasbook pip install graphviz
 ```
-Why this set of lines then executing a one liner? Basically:
+Why executing this set of lines than running a one liner? Basically:
 - Installing an older version of `fastai` whilst installing newest
   `pytorch` produces a runtime error that a particular function
   doesn't exist. Thus, forcing to install the latest `fastai` library.
