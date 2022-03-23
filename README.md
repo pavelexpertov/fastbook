@@ -26,7 +26,8 @@ Linux OS by a Linux user. If you ain't using this platform, go
 elsewhere for info ;). Steps:
 
 1. Install necessary sub-dependencies outside conda like nvidia
-   drivers.
+   drivers and graphviz.
+  - `graphviz` can be installed by running `apt install graphviz`.
   - Install normal nvidia drivers as if it was a gaming PC. It should
     be simple depending on your distro and their support for easy
     driver installation.
