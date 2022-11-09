@@ -52,7 +52,7 @@ elsewhere for info ;). Steps:
     inside the repo's root directory:
 ```bash
 conda env create --file environment.yml
-conda install -n fastbook -c fastchan fastai
+conda install -n fastbook -c fastchan fastai fastbook
 conda install -n fastbook jupyter
 conda run -n fasbook pip install graphviz
 ```
