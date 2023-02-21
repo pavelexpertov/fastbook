@@ -44,27 +44,14 @@ elsewhere for info ;). Steps:
       check, run `nvcc --version` and `nvidia-smi` and it should
       inform you everything you need to know.
 2. Installing dependencies for the fastbook.
-  - Unless you are using my patched `environment.yml`, you should edit
-    it so `pip`'s argument of `requirements.txt` file doesn't have
-    `file:` prefix. This is because `pip` has some updated URI
-    protocol interface that doesn't like it.
-  - Ok, you will need to execute the following lines when you are
-    inside the repo's root directory:
+  - Run the following:
 ```bash
 conda env create --file environment.yml
-conda install -n fastbook -c fastchan fastai fastbook
-conda install -n fastbook jupyter
-conda run -n fasbook pip install graphviz
+mamba run -n fastbook pip install azure-cognitiveservices-search-imagesearch
 ```
-Why executing this set of lines than running a one liner? Basically:
-- Installing an older version of `fastai` whilst installing newest
-  `pytorch` produces a runtime error that a particular function
-  doesn't exist. Thus, forcing to install the latest `fastai` library.
-- For some odd reason, after doing the above, it removes the
-  `notebook` and `graphviz` libraries. Thus, installing the `jupyter`
-  and then running graphviz via isolated `pip install` command. That
-  should fix not finding the notebook as well as inability to generate
-  graphs (which are useful for studying afterall).
+  - Note: original issues were original `environment.yml`'s 'file' protocol for
+    requirements.txt and `fastchan` anaconda channel worked better than `fastai`
+    whilst resolving dependency resolutions.
 
 ## Citations
 
