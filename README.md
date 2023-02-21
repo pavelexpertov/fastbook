@@ -24,7 +24,9 @@ If you make any pull requests to this repo, then you are assigning copyright of 
 ## How to install the damned thing locally next to your GPU
 Installing dependencies for this repository via `conda` has been hairy.
 Hopefully, this will help me and whoever is reading this to set it up
-without flaws. Keep in mind, that it's targeted for GPU set up. So
+without flaws. Do try to create environment by choosing either `environment.yml`
+or `environment_cuda.yml` when using conda/mamba and see what happens.
+Keep in mind, that it's targeted for GPU set up. So
 plan accordingly for your CPU set up. Furtheremore, it's done for
 Linux OS by a Linux user. If you ain't using this platform, go
 elsewhere for info ;). Steps:
@@ -43,10 +45,16 @@ elsewhere for info ;). Steps:
       install nvidia-cuda-toolkit`. It seems to set up everything. To
       check, run `nvcc --version` and `nvidia-smi` and it should
       inform you everything you need to know.
+    * Note: perhaps using `environment_cuda.yml` might help with cuda drivers, try it.
 2. Installing dependencies for the fastbook.
-  - Run the following:
+  - Run the following for cpu setup:
 ```bash
 conda env create --file environment.yml
+mamba run -n fastbook pip install azure-cognitiveservices-search-imagesearch
+```
+  - Run the following for nvidia gpu setup:
+```bash
+conda env create --file environment_cuda.yml
 mamba run -n fastbook pip install azure-cognitiveservices-search-imagesearch
 ```
   - Note: original issues were original `environment.yml`'s 'file' protocol for

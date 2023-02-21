@@ -1,0 +1,14 @@
+name: fastbook
+channels:
+    - fastchan
+    - pytorch
+    - nvidia
+    - defaults
+dependencies:
+  - python>=3.6
+  - pytorch>=1.6
+  - torchvision
+  - pytorch-cuda=11.6
+  - pip
+  - pip:
+    - -r requirements.txt
